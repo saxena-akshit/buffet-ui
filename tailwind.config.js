@@ -22,6 +22,7 @@ export default {
                 'dark-text': '#E2E8F0',
                 'dark-text-secondary': '#A0AEC0',
                 'dark-border': '#4A5568',
+                'tooltip-bg': '#4A5568',
             },
             fontFamily: {
                 // Set Poppins as the default sans-serif font
