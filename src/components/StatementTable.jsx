@@ -1,47 +1,40 @@
 import React from 'react';
 
 function StatementTable({ title, statement }) {
-    // Basic validation and data extraction
     if (!Array.isArray(statement) || statement.length === 0) {
         return <p className="dark:text-dark-text-secondary italic mt-4">No data available for {title}.</p>;
     }
 
-    // Determine headers (years/dates) dynamically from the keys of the first item, excluding 'Item'
-    // Sort headers chronologically (most recent first)
     const headers = Object.keys(statement[0] || {})
         .filter(key => key !== 'Item')
-        .sort((a, b) => new Date(b) - new Date(a)); // Sort dates descending
+        .sort((a, b) => new Date(b) - new Date(a));
 
     return (
-        <div className="mt-6"> {/* Add margin top for spacing between tables */}
-            <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-white">{title}</h4>
-            <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
-                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <div className="mt-6">
+            <h4 className="text-lg font-semibold mb-3 text-brand-gold-light">{title}</h4>
+            <div className="overflow-x-auto relative shadow-md sm:rounded-lg border border-dark-border">
+                <table className="w-full text-sm text-left text-dark-text-secondary">
+                    <thead className="text-xs uppercase bg-dark-card dark:bg-opacity-50 text-dark-text-secondary">
                         <tr>
-                            {/* First header is 'Item' */}
-                            <th scope="col" className="py-3 px-6 sticky left-0 bg-gray-50 dark:bg-gray-700 z-10">
+                            <th scope="col" className="py-3 px-6 sticky left-0 bg-dark-card dark:bg-opacity-50 z-10"> {/* Adjusted sticky header bg */}
                                 Item
                             </th>
-                            {/* Dynamically generated year/date headers */}
                             {headers.map(header => (
-                                <th key={header} scope="col" className="py-3 px-6 text-right">
-                                    {header} {/* Display date/year */}
+                                <th key={header} scope="col" className="py-3 px-6 text-right whitespace-nowrap">
+                                    {header}
                                 </th>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
                         {statement.map((item, index) => (
-                            <tr key={index} className="bg-white border-b dark:bg-dark-card dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                {/* Financial Item Name (sticky column) */}
-                                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white sticky left-0 bg-white dark:bg-dark-card z-10">
+                            <tr key={index} className={`border-b dark:border-dark-border ${index % 2 === 0 ? 'bg-dark-card bg-opacity-20' : 'bg-dark-card bg-opacity-40'} hover:bg-dark-card-hover group`}>
+                                {/* Make sticky column background match row background */}
+                                <th scope="row" className={`py-4 px-6 font-medium text-dark-text whitespace-nowrap sticky left-0 z-10 ${index % 2 === 0 ? 'bg-dark-card bg-opacity-20' : 'bg-dark-card bg-opacity-40'} group-hover:bg-dark-card-hover`}>
                                     {item.Item || 'N/A'}
                                 </th>
-                                {/* Dynamically generated value cells */}
                                 {headers.map(header => (
-                                    <td key={header} className="py-4 px-6 text-right">
-                                        {/* API already formats numbers/NA */}
+                                    <td key={header} className="py-4 px-6 text-right whitespace-nowrap">
                                         {item[header] !== undefined ? item[header] : 'N/A'}
                                     </td>
                                 ))}

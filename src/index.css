@@ -4,7 +4,6 @@
 
 /* Basic body styling for dark mode */
 body {
-  @apply bg-white text-gray-900 dark:bg-dark-bg dark:text-dark-text transition-colors duration-200;
-  /* Optional: Add default font */
-  /* font-family: 'Inter', sans-serif; */
+  @apply bg-white text-gray-900 dark:bg-dark-bg dark:text-dark-text;
+  @apply transition-colors duration-200 font-sans; /* Apply Poppins font */
 }
