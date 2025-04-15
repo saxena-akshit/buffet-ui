@@ -1,6 +1,3 @@
-## Frontend README (`ui/README.md`)
-
-````markdown
 # Buffett Insights - Frontend UI
 
 This project is the React frontend for the Buffett Insights Financial Analyzer application. It provides a user interface to interact with the backend API, allowing users to view financial statements and key Warren Buffett ratios for public companies. It also includes a placeholder for a future AI chatbot feature.
@@ -47,8 +44,8 @@ This project is the React frontend for the Buffett Insights Financial Analyzer a
       ```
     - _Using yarn:_
       `bash
-    yarn dev
-    `
+yarn dev
+`
       The application will typically be available at `http://localhost:5173/`.
 
 ## Features
@@ -67,4 +64,7 @@ This project is the React frontend for the Buffett Insights Financial Analyzer a
 - React Router DOM (for navigation)
 - Axios (for API calls)
 - Poppins Google Font
-````
+
+```
+
+```
