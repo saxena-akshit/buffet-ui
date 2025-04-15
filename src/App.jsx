@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'; // Import useEffect
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import StockDashboard from './pages/StockDashboard';
-// import Header from './components/Header'; // Optional: Commented out - Component not created
+import ChatbotPage from './pages/ChatbotPage';
 
 function App() {
   // Apply 'dark' class to the root <html> element for Tailwind darkMode: 'class'
@@ -29,7 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/dashboard" element={<StockDashboard />} />
-            {/* Add other routes here if needed */}
+            <Route path="/chatbot" element={<ChatbotPage />} />
           </Routes>
         </main>
         {/* Optional: Add a persistent Footer */}
