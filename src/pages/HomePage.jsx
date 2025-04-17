@@ -9,7 +9,7 @@ function HomePage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8 text-center bg-dark-bg">
             {/* Title - More impactful */}
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-16 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-purple-light via-brand-gold-light to-brand-purple">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-24 tracking-tight text-brand-purple">
                 Buffett Insights <br className="hidden md:block" /> Financial Analyzer
             </h1>
 
