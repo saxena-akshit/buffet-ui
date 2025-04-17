@@ -19,24 +19,24 @@ const UserAvatar = () => (
 const ModelToggleSwitch = ({ model, setModel }) => {
     const isRag = model === 'rag';
     return (
-        <div className="flex items-center justify-center space-x-4">
-            <span className={`font-semibold text-xs transition-colors ${!isRag ? 'text-brand-gold-light' : 'text-dark-text-secondary'}`}>
+        <div className="flex items-center justify-center space-x-3 p-3">
+            <span className={`font-semibold text-s transition-colors ${!isRag ? 'text-brand-gold-light' : 'text-dark-text-secondary'}`}>
                 Gemini
             </span>
             <Switch
                 checked={isRag}
                 onChange={() => setModel(isRag ? 'gemini' : 'rag')}
                 className={`${isRag ? 'bg-brand-purple' : 'bg-brand-gold' // Use solid colors
-                    } relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-card focus:ring-brand-purple-light shadow-inner`} // Adjusted size slightly
+                    } relative inline-flex h-7 w-14 items-center rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-card focus:ring-brand-purple-light shadow-inner`} // Adjusted size slightly
             >
                 <span className="sr-only">Select Model</span>
                 <span
-                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ease-in-out shadow ${ // Removed shadow-lg for cleaner knob
-                        isRag ? 'translate-x-6' : 'translate-x-1'
+                    className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform duration-300 ease-in-out shadow ${ // Removed shadow-lg for cleaner knob
+                        isRag ? 'translate-x-8' : 'translate-x-1'
                         }`}
                 />
             </Switch>
-            <span className={`font-semibold text-xs transition-colors ${isRag ? 'text-brand-purple-light' : 'text-dark-text-secondary'}`}>
+            <span className={`font-semibold text-s transition-colors ${isRag ? 'text-brand-purple-light' : 'text-dark-text-secondary'}`}>
                 Custom RAG
             </span>
         </div>
@@ -71,9 +71,9 @@ function ChatbotPage() {
 
     return (
         // Main container - Apply user's width/centering preference
-        <div className="flex flex-col h-screen bg-dark-bg text-dark-text p-4 sm:p-6 w-full md:w-2/3 mx-auto"> {/* Added w-full md:w-2/3 mx-auto */}
+        <div className="flex flex-col h-screen bg-dark-bg text-dark-text p-4 sm:p-6 w-full md:w-4/5 mx-auto"> {/* Added w-full md:w-2/3 mx-auto */}
             {/* Header */}
-            <h1 className="text-2xl md:text-3xl font-semibold mb-4 text-center text-slate-200 flex-shrink-0">
+            <h1 className="text-xl md:text-2xl font-semibold mb-4 text-center text-slate-200 flex-shrink-0">
                 AI Investment Chatbot
             </h1>
 
